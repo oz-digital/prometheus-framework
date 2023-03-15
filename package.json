@@ -1,16 +1,14 @@
 {
-  "name": "@ozdao-core/prometheus-framework",
+  "name": "@ozdao/prometheus-framework",
   "version": "0.0.1",
   "description": "Web3 Framework focused on user experience and ease of development.",
-  "author": {
-    "name": "OZ DAO",
-    "email": "hello@ozdao.dev"
-  },
-  "license": "GNU GPLv3",
+  "author": "OZ DAO <hello@ozdao.dev>",
+  "license": "GPL-3.0-or-later",
   "homepage": "https://docs.ozdao.dev",
+  "private": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/oz-digital/prometheus-framework"
+    "url": "git+https://github.com/oz-digital/prometheus-framework.git"
   },
   "keywords": [
     "web3",
@@ -33,7 +31,7 @@
   },
   "browser": {
     ".": "./dist/prometheus-framework.es.js"
-  }, 
+  },
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly",
     "test": "vue-tsc --noEmit"
@@ -48,5 +46,8 @@
     "typescript": "^4.5.4",
     "vite": "^2.9.15",
     "vue-tsc": "^0.40.5"
+  },
+  "bugs": {
+    "url": "https://github.com/oz-digital/prometheus-framework/issues"
   }
 }

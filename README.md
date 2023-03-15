@@ -24,7 +24,7 @@ Why create another UI framework when there are a huge number of solutions that h
 # Installation
 To install the library, use npm:
 ```bash
-npm install prometheus-framework
+npm install '@ozdao/prometheus-framework'
 ```
 
 # Usage
@@ -35,7 +35,7 @@ You can import components from the library in three ways:
 If you want to use all components globally, import the library and register it with your Vue app:
 
 ```js
-import PrometheusFramework from 'prometheus-framework'
+import PrometheusFramework from '@ozdao/prometheus-framework'
 // App init...
 app.use(PrometheusFramework)
 ```
@@ -48,7 +48,7 @@ If you want to use specific components from the library, import them individuall
 
 ```js
 import { createApp } from 'vue'
-import { Button, Field } from 'prometheus-framework'
+import { Button, Field } from '@ozdao/prometheus-framework'
 // App init...
 app.component('Button', Button)
 app.component('Field', Field)
@@ -61,11 +61,11 @@ If you want to use a component locally within a specific Vue component, import i
 
 ```html
 <template>
-  <Button />
+  <Button>Slot</Button>
 </template>
 
 <script setup>
-import { Button } from 'prometheus-framework'
+import { Button } from '@ozdao/prometheus-framework'
 </script>
 ```
 This will import the Button component from the library and make it available for use within the current Vue component only.

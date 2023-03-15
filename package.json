@@ -1,5 +1,5 @@
 {
-  "name": "@ozdao/prometheus-framework",
+  "name": "@ozdao-core/prometheus-framework",
   "version": "0.0.1",
   "description": "Web3 Framework focused on user experience and ease of development.",
   "author": {
@@ -10,7 +10,7 @@
   "homepage": "https://docs.ozdao.dev",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ozdao/prometheus-framework"
+    "url": "git+https://github.com/oz-digital/prometheus-framework"
   },
   "keywords": [
     "web3",

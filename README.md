@@ -84,7 +84,7 @@ For more detailed information on how to use each component, see the [component d
 Contributions are welcome! Please see the [contributing guide](https://docs.ozdao.dev/docs/contribution/) for more information.
 
 # License
-This library is licensed under the [GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.txt) .
+This library is licensed under the [GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.txt).
 
 # Changelog
 All notable changes to this project will be documented in this file.

@@ -1,56 +1,55 @@
 <script setup lang="ts">
-	import { ref } from 'vue'
+	import { ref, Ref, defineProps, withDefaults } from 'vue'
 	
 	// Define props types
-	interface Props {
-		submit?: () => Promise<void>,
-		callback?: () => Promise<void>,
+	export interface Props {
+		submit?: () => Promise<any>,
+		callback?: () => Promise<any>,
 		validation?: boolean,
 	}
 	// Our default values for props
 	const props = withDefaults(defineProps<Props>(), {
-		submit: console.log('button click'),
-		callback: console.log('button callback'),
+		submit: async () => { console.log('Button click.') },
+		callback: async () => { console.log('Button callback.') },
 		validation: false,
 	});
 	
 	// Ref to Button in DOM
-	const button = ref<HTMLElement | null>(null);
+	const button: Ref<any> = ref(null);
 	// Button state
-	const error = ref<string | null>(null);
-	const loading = ref<boolean | null>(null);
-	const finished = ref<boolean | null>(null);
+	const error: Ref<string | null> = ref(null);
+	const loading: Ref<boolean> = ref(false);
+	const finished: Ref<boolean> = ref(false);
 
 	// On click function
-	function Submit() {
-		// Hide slot and show loading animation
-		button.value!.style['pointer-events'] = 'none';
+
+	async function Submit() {
+		// 1. Hide slot and show loading animation
+		button.value.style['pointer-events'] = 'none';
 		error.value = null;
 		loading.value = true;
 
-		// After finishing submit function passed from parent component 
-		// we start to change button state to show finish check mark or error
-		props.submit().then(
-			() => {
-				// Hide loader and show finish checkmark
-				button.value!.style['background-color'] = '#0088ff';
-				loading.value = false;
-				finished.value = true;
-				// Start callback passed from parent component 
-				setTimeout(() => props.callback(), 750);
-			},
-			err => {
-				error.value = err.toString();
+		// 2. After finishing submit function passed from parent component 
+		//    we start to change button state to show finish check mark or error
+		try {
+			await props.submit();
+			// 3. Hide loader and show finish checkmark
+			button.value.style['background-color'] = '#0088ff';
+			loading.value = false;
+			finished.value = true;
+			// 4. Start callback passed from parent component 
+			setTimeout(() => props.callback(), 750);
+		} catch (error: any) {
+			error.value = error.toString();
 
-				// After 1000 sec we hide error
-				setTimeout(() => {
-					button.value!.style.pointerEvents = 'auto';
-					loading.value = false;
-					finished.value = false;
-					error.value = null;
-				}, 1000);
-			}
-		);
+			// After 1000 sec we hide error
+			setTimeout(() => {
+				button.value.style.pointerEvents = 'auto';
+				loading.value = false;
+				finished.value = false;
+				error.value = null;
+			}, 1000);
+		}
 	}
 </script>
 

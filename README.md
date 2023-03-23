@@ -1,12 +1,10 @@
 # Prometheus Framework – Web Development from Undeground
 Prometheus is a Web3 Framework focused on user experience and ease of development. It's provide libraries of components, methods, styles and many other things for frontend development on Vue 3 with SSR and Web3 support. 
 
-Created by OZ DAO. Visit our website:
-www.ozdao.dev
+**Created by OZ DAO. Visit our website: www.ozdao.dev**
 
 # Getting Started
 In Greek mythology, Prometheus is a Titan god of fire. Prometheus is best known for defying the gods by stealing fire from them and giving it to humanity in the form of technology, knowledge, and more generally, civilization. So our goal is to provide people with the best technologies and solutions that they can easily use every day.
-
 
 ## What's inside?
 - [Vue 3](https://vuejs.org/)
@@ -89,5 +87,5 @@ This library is licensed under the [GNU GPLv3](https://www.gnu.org/licenses/gpl-
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## 0.0.1 - 2023.03.14
+## 0.0.1 - 2023.03.15
 - First commmit and preparation for deploy

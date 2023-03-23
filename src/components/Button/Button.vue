@@ -34,16 +34,25 @@
 		try {
 			await props.submit();
 			// 3. Hide loader and show finish checkmark
-			button.value.style['background-color'] = '#0088ff';
+			button.value.classList.add('bg-light-blue');
+			button.value.classList.remove('bg-blue');
+
 			loading.value = false;
 			finished.value = true;
 			// 4. Start callback passed from parent component 
 			setTimeout(() => props.callback(), 750);
-		} catch (error: any) {
-			error.value = error.toString();
+		} catch (err: any) {
 
+			button.value.classList.add('bg-light-red');
+			button.value.classList.remove('bg-blue');
+
+			error.value = '❌';
+			
 			// After 1000 sec we hide error
 			setTimeout(() => {
+				// button.value.classList.add('bg-blue');
+				button.value.classList.add('bg-blue');
+				button.value.classList.remove('bg-light-red');
 				button.value.style.pointerEvents = 'auto';
 				loading.value = false;
 				finished.value = false;
@@ -56,36 +65,41 @@
 <template>
 	<button @click="Submit" :disabled="validation" ref="button" class="w-100 t-white bg-blue button">
 		<!-- Slot -->
-		<transition mode="out-in" name="scale">
-			<slot v-if="!loading && !error && !finished"></slot>
+		<transition mode="out-in" name="fadeIn">
+			<span v-if="!loading && !error && !finished">
+				<slot></slot>
+			</span>
 		</transition>
 		<!-- Loading Circle Animation -->
-		<transition mode="out-in" name="scale">
+		<transition mode="out-in" name="fadeIn">
 			<div v-if="loading && !error" class="loading">
-				<svg class="i-default" width="135"	height="140" viewBox="0 0 135 140" xmlns="http://www.w3.org/2000/svg" fill="#fff">
-					<rect 			  y="10"	width="15" 	height="120" rx="6">	<animate attributeName="height"	begin="0.5s" 	dur="1s"	values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"	repeatCount="indefinite" /> <animate attributeName="y"	begin="0.5s" 	dur="1s"	values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"	repeatCount="indefinite"/> </rect> 
-					<rect x="30"	y="10" 	width="15" 	height="120" rx="6"> 	<animate attributeName="height"	begin="0.25s" dur="1s"	values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"	repeatCount="indefinite" /> <animate attributeName="y"	begin="0.25s" dur="1s"	values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"	repeatCount="indefinite"/> </rect>
-					<rect x="60" 				 	width="15" 	height="140" rx="6"> 	<animate attributeName="height"	begin="0s" 		dur="1s"	values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"	repeatCount="indefinite" /> <animate attributeName="y"	begin="0s" 		dur="1s"	values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"	repeatCount="indefinite"/> </rect>
-					<rect x="90"	y="10"	width="15" 	height="120" rx="6"> 	<animate attributeName="height"	begin="0.25s" dur="1s"	values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"	repeatCount="indefinite" /> <animate attributeName="y"	begin="0.25s" dur="1s"	values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"	repeatCount="indefinite"/> </rect>
-					<rect x="120" y="10" 	width="15" 	height="120" rx="6"> 	<animate attributeName="height"	begin="0.5s" 	dur="1s"	values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"	repeatCount="indefinite" /> <animate attributeName="y"	begin="0.5s" 	dur="1s"	values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"	repeatCount="indefinite"/> </rect> 
-				</svg>
+				<span>
+					<svg class="i-default" width="135"	height="140" viewBox="0 0 135 140" xmlns="http://www.w3.org/2000/svg" fill="#fff">
+						<rect 			  y="10"	width="15" 	height="120" rx="6">	<animate attributeName="height"	begin="0.5s" 	dur="1s"	values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"	repeatCount="indefinite" /> <animate attributeName="y"	begin="0.5s" 	dur="1s"	values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"	repeatCount="indefinite"/> </rect> 
+						<rect x="30"	y="10" 	width="15" 	height="120" rx="6"> 	<animate attributeName="height"	begin="0.25s" dur="1s"	values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"	repeatCount="indefinite" /> <animate attributeName="y"	begin="0.25s" dur="1s"	values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"	repeatCount="indefinite"/> </rect>
+						<rect x="60" 				 	width="15" 	height="140" rx="6"> 	<animate attributeName="height"	begin="0s" 		dur="1s"	values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"	repeatCount="indefinite" /> <animate attributeName="y"	begin="0s" 		dur="1s"	values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"	repeatCount="indefinite"/> </rect>
+						<rect x="90"	y="10"	width="15" 	height="120" rx="6"> 	<animate attributeName="height"	begin="0.25s" dur="1s"	values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"	repeatCount="indefinite" /> <animate attributeName="y"	begin="0.25s" dur="1s"	values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"	repeatCount="indefinite"/> </rect>
+						<rect x="120" y="10" 	width="15" 	height="120" rx="6"> 	<animate attributeName="height"	begin="0.5s" 	dur="1s"	values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"	repeatCount="indefinite" /> <animate attributeName="y"	begin="0.5s" 	dur="1s"	values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"	repeatCount="indefinite"/> </rect> 
+					</svg>
+				</span>
 			</div>
 		</transition>
 		<!-- Checkmark if finished -->
-		<transition mode="out-in" name="scale">
+		<transition mode="out-in" name="fadeIn">
 			<div v-if="finished" class="h4 loading">
 				<span class="t-white">✔</span>
 			</div>
 		</transition>
 		<!-- Error if not finished -->
-		<div v-if="error" class="error">
-			{{ error }}
-		</div>
+		<transition mode="out-in" name="fadeIn">
+			<div v-if="error" class="error">
+				<span>{{ error }}</span>
+			</div>
+		</transition>
 		
 	</button> 
 </template>
 
-<style lang="scss">
+<style>
+
 </style>
-
-

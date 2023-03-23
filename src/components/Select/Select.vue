@@ -103,9 +103,9 @@
 
   }
 
-    .dropdown-small {
-      top: 2.5rem;
-    }
+  .dropdown-small {
+    top: 2.5rem;
+  }
   .caret {
     display:relative;
     width:0;

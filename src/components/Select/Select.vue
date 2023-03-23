@@ -46,7 +46,7 @@
 
 
 <script setup="props">
-	import { computed,ref,reactive } from 'vue'
+	import { computed, ref, reactive } from 'vue'
 
   const props = defineProps(
     ['obj','label','prop','value','options','content','textarea','placeholder','size']
@@ -103,9 +103,9 @@
 
   }
 
-  .dropdown-small {
-    top: 2.5rem;
-  }
+    .dropdown-small {
+      top: 2.5rem;
+    }
   .caret {
     display:relative;
     width:0;

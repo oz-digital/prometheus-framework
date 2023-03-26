@@ -1,6 +1,20 @@
 import type { App } from 'vue';
 
-import { Field, Button, Select } from './components';
+// Define Styles
+// ------------------------------------- //
+import '@/styles/reset.scss';
+import '@/styles/base.scss';
+import '@/styles/typography.scss';
+import '@/styles/layout.scss';
+import '@/styles/responsive.scss';
+
+// Define components
+// ------------------------------------- //
+import { 
+  Field, 
+  Button, 
+  Select 
+} from  './components';
 
 export default {
   install: (app: App) => {
@@ -10,4 +24,5 @@ export default {
   }
 };
 
-export { Field, Button, Select };
+export { Field, Button, Select }
+

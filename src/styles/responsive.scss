@@ -1,0 +1,232 @@
+@media screen and (min-width: var(--xxl-desktop-min)) {
+    html, body {
+      font-size: 20px;
+    }
+  }
+  
+  @media screen and (min-width: var(--xl-desktop-min)) {
+    html, body {
+      font-size: 18px;
+    }
+  }
+  
+  @media screen and (max-width: var(--desktop-max)) {
+    html, body {
+      font-size: 16px;
+    }
+  }
+  
+  @media screen and (max-width: var(--tablet-landscape-max)) {
+    html, body {
+      font-size: 14px;
+    }
+  
+    .section {
+      padding: 3rem 2rem;
+    } 
+    .input-text {
+      width: 100%;
+    }
+  }
+  
+  @media screen and (min-width: var(--tablet-portrait-min)) {
+    .mobile-only {
+       display: none !important;
+    }
+  }
+
+   @media screen and (max-width: var(--tablet-portrait-min)) {
+
+    .desktop-only {
+       display: none !important; 
+    }
+
+    .mobile-only {
+       display: inherit !important;
+    }
+
+    .mn-small { margin-bottom: 1.5rem !important;}
+
+    .mobile-w-100 {
+      width: 100%;
+    }
+
+     // Cols
+    .cols-1, .cols-2, .cols-3, .cols-4,  .cols-2-2_1, .cols-2-1_2, .cols-2-1_3, .cols-2-golden-ration   { display: grid !important; grid-template-columns: 1fr !important; gap: 1rem !important; }
+
+    .cols-2 { >.col { width: 100% !important;  } }
+
+    .pd-extra { padding: 3rem }
+    .pd-big { padding: 1.5rem }
+
+    .cols-4, .cols-5 {
+      grid-template-columns: 1fr 1fr !important;
+      grid-template-rows: 1fr 1fr  !important; 
+      gap: 1rem 1rem;
+      grid-template-areas: 
+        "col1 col2"
+        "col3 col4" !important; 
+    }
+
+    .cols-6 {
+      grid-template-columns: 1fr 1fr 1fr!important;
+    }
+
+    .shop-cart {
+      width: 100%;
+      right: -100%;
+
+      .shopcart-footer {
+        width: 100%;
+        right: -100%;
+      }
+
+      &-active {
+        right: 0;
+
+        .shopcart-footer {
+          right: 0;
+        }
+      }
+    }
+
+    .btm-header .active {
+        height: auto!important;
+        padding: 2rem!important;
+    }
+
+    #hero {
+      text-align: center;
+
+      img { width: 66% !important; }
+
+      .col:last-of-type {
+        order: 1
+      }
+
+      .col:first-of-type {
+        order: 2
+      }
+
+      span {
+        display: inline-block;;
+      }
+    }
+
+    #main-menu {
+      li {
+        &:nth-child(1) {
+          background-size: 66% !important;
+        }
+
+        &:nth-child(2) {
+          background-size: 66% !important;
+        }
+
+        &:nth-child(3) {
+          background-size: 66% !important;
+        }
+      }
+    }
+
+    #gmap_canvas { 
+      height: 24rem !important;
+    }
+
+    .footer {
+      text-align: center;
+
+      .logo-link {
+        img {
+          margin: 0 auto;
+          margin-bottom: 2rem;
+        }
+      }
+
+      .twocols {
+        column-count: 1 !important;
+      }
+
+      .socials {
+        justify-content: center;
+      }
+    }
+
+     .catalog-wrapper {
+        grid-template-columns: 1fr !important; 
+
+        .grid-layout {
+          grid-template-columns: 1fr 1fr !important; 
+          gap: 1rem !important;
+        }
+      }
+
+    
+  }
+  
+  @media screen and (max-width: var(--phone-landscape-max)) {
+      
+    html, body {
+        font-size: 13px;
+    }	
+    
+    .categories {
+      padding-top: 8rem !important; 
+
+      div {
+        width: 100%;
+      }
+    }
+
+  
+
+    h1, .h1 { font-size: 3rem }
+    h2, .h2 { font-size: 2.5rem }
+    h3, .h3 { font-size: 1.75rem }
+
+   
+
+    // Margins
+    .mn-r-extra {
+      margin-right: 2rem;
+    }
+
+    .mn-big {
+      margin-bottom: 1.5rem;
+    }
+
+    // Header
+    #header-bottom {
+      padding: 1rem;
+      padding-top: 0;
+
+      .bottom-header {
+        background: rgba(34, 102, 255, 0.05);
+        border-radius: 1rem;
+      }
+    }
+  }
+
+  @media screen and (min-width: var(--phone-portrait-max)) {
+
+  }
+  
+  @media screen and (max-width: var(--phone-portrait-max)) {
+
+
+  }
+  
+  @media screen and (max-width: var(--flip-phone-max)) {
+    html, body {
+      font-size: 8px;
+    }
+    .pd-extra {
+        // padding: var(--big) + 1;
+    }
+  }
+  
+  @media screen and (max-width: var(--super-ultra-tiny-flip-phone-max)) {
+    html, body {
+      font-size: 5px;
+    }
+  }

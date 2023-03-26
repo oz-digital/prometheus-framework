@@ -3,9 +3,9 @@ import vue from '@vitejs/plugin-vue';
 import typescript2 from 'rollup-plugin-typescript2';
 import { resolve } from 'path';
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(),
+  plugins: [
+    vue(),
     typescript2({
       check: false,
       include: ["src/components/**/*.vue"],
@@ -21,22 +21,28 @@ export default defineConfig({
     }),
   ],
   build: {
-    cssCodeSplit: false,
+    cssCodeSplit: true,
     lib: {
       entry: "./src/main.ts",
       formats: ["es", "cjs"],
-      name: "ViewerPlugin",
+      name: "prometheus-framework",
       fileName: format => `prometheus-framework.${format}.js`
     },
     rollupOptions: {
       external: ["vue"],
       output: {
-        exports: "named",
         globals: {
           vue: "Vue"
         }
       }
     }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import './src/styles/config.scss';`,
+      },
+    },
   },
   resolve: {
     alias: {

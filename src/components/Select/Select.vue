@@ -91,7 +91,7 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
   .dropdown-menu {
     z-index: 20;
@@ -103,9 +103,10 @@
 
   }
 
-    .dropdown-small {
-      top: 2.5rem;
-    }
+  .dropdown-small {
+    top: 2.5rem;
+  }
+
   .caret {
     display:relative;
     width:0;

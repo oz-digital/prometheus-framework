@@ -1,4 +1,9 @@
 import { defineComponent, ref, openBlock, createElementBlock, createElementVNode, toDisplayString, createCommentVNode, computed, withModifiers, normalizeClass, Fragment, renderList, unref, createVNode, Transition, withCtx, renderSlot, createTextVNode } from "vue";
+var reset = "";
+var base = "";
+var typography = "";
+var layout = "";
+var responsive = "";
 const _hoisted_1$2 = { class: "flex-nowrap flex-v-center flex pd-medium bg-white" };
 const _hoisted_2$2 = {
   key: 0,
@@ -39,14 +44,7 @@ const _sfc_main$2 = defineComponent({
     };
   }
 });
-var Select_vue_vue_type_style_index_0_scoped_true_lang = "";
-var _export_sfc = (sfc, props) => {
-  const target = sfc.__vccOpts || sfc;
-  for (const [key, val] of props) {
-    target[key] = val;
-  }
-  return target;
-};
+var Select_vue_vue_type_style_index_0_lang = "";
 const _hoisted_1$1 = { class: "input-wrapper" };
 const _hoisted_2$1 = { class: "t-transp p-small" };
 const _hoisted_3$1 = {
@@ -124,7 +122,7 @@ const _sfc_main$1 = {
     };
   }
 };
-var Select = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-112f9fba"]]);
+var Button_vue_vue_type_style_index_0_lang = "";
 const _hoisted_1 = ["disabled"];
 const _hoisted_2 = { key: 0 };
 const _hoisted_3 = {
@@ -378,7 +376,7 @@ var main = {
   install: (app) => {
     app.component("Field", _sfc_main$2);
     app.component("Button", _sfc_main);
-    app.component("Select", Select);
+    app.component("Select", _sfc_main$1);
   }
 };
-export { _sfc_main as Button, _sfc_main$2 as Field, Select, main as default };
+export { _sfc_main as Button, _sfc_main$2 as Field, _sfc_main$1 as Select, main as default };

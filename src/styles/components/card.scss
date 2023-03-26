@@ -1,0 +1,17 @@
+.card {
+	display: flex;
+	position: relative;
+
+	overflow: hidden; 
+
+	flex-direction: column;
+
+	padding: var(--medium);
+
+	background: white;
+	border-radius: var(--thin);
+
+	box-shadow: 0px 8px 8px -8px rgba(var(--dark),0.1);
+
+	transition: 0.2s;
+}

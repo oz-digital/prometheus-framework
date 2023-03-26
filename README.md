@@ -86,6 +86,7 @@ This library is licensed under the [GNU GPLv3](https://www.gnu.org/licenses/gpl-
 
 # Changelog
 All notable changes to this project will be documented in this file.
-
+## 0.0.6 - 2023.03.26
+- Added styles
 ## 0.0.1 - 2023.03.15
 - First commmit and preparation for deploy
